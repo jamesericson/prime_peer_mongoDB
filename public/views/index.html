@@ -5,19 +5,31 @@
     <script type="text/javascript" src="venders/angular.min.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <title>test</title>
+    <style media="screen">
+      html {margin: 0 auto; text-align: center;}
+      ul {background-color: aqua; border-radius: 10px; display: inline-flex; margin: 10px; list-style-type: none; padding: 10px;}
+    </style>
   </head>
   <body ng-app="myApp">
     <div ng-controller="AssController">
-      <h1>assignments:</h1>
-      
+      <h1>Assignments</h1>
       <ul ng-repeat="ass in assignments">
         <li>
           <p>Name: {{ ass.assignment_name }}</p>
+          <p>Student ID: {{ ass.student_id }}</p>
           <p>Score: {{ ass.assignment_score }}</p>
           <p>Turned-In Date: {{ ass.turned_in_date }}</p>
-
+          <button ng-click="deleteAss( ass._id );" >Delete</button>
         </li>
       </ul>
+      <h1>Add Assignments</h1>
+      <input type="text" ng-model="nameIn" placeholder="Name">
+      <input type="number" ng-model="studentIdIn" placeholder="Student ID">
+      <input type="number" ng-model="scoreIn" placeholder="Score">
+      <input type="text" ng-model="TurntIn" placeholder="Turnt Date">
+      <button type="button" ng-click="postAss();" >ENTER</button>
+
+
     </div>
   </body>
 </html>

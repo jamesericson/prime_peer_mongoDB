@@ -18,25 +18,23 @@ router.get('/', function(req, res){
   });
 }); // end router.get
 
-router.post('/', function(req, res) {
-  console.log('in post user route, req.body -> ', req.body);
+router.delete('/:id', function(req, res) {
+  console.log('in post user route, req.body -> ', req.params.id);
 
-  var newAssignment = new Assignment({
-    assignment_name: req.body.name,
-    student_id: req.body.student_id,
-    assignment_score: req.body.score,
-    turned_in_date: req.body.date
-  });
-
-  newAssignment.save(function (err) {
+  Assignment.findByIdAndRemove(req.params.id, function (err) {
     if (err){
       console.log(err);
       res.sendStatus(500);
     } else {
-      console.log('new assignment created');
-      res.sendStatus(201);
+      console.log('assignment deleted');
+      res.sendStatus(200);
     }// end if/else
   });// end newAssignment.save
+
+});// end router.delete
+
+router.post('/', function(req, res) {
+  console.log('in post user route, req.body -> ', req.body);
 
 });// end router.post
 

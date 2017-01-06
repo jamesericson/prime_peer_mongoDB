@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="venders/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <title>test</title>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="AssController">
+      <h1>assignments:</h1>
+      
+      <ul ng-repeat="ass in assignments">
+        <li>
+          <p>Name: {{ ass.assignment_name }}</p>
+          <p>Score: {{ ass.assignment_score }}</p>
+          <p>Turned-In Date: {{ ass.turned_in_date }}</p>
+
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

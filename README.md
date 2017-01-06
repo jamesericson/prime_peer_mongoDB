@@ -1,5 +1,17 @@
 # prime_peer_mongoDB
 
+Worked on as a two person assignment, this app displays assignments that are stored on a mongo db. Assignment info is displayed on page load and allows for users to add more per input forms and then allows them to delete them via a delete button on each assignment element. 
+
+Tech Used:
+JavaScript
+Angular
+Express
+Node
+Mongoose
+Mongo
+
+This Assignment Instructions:
+
 Assignment Tracker
 
 Project Purpose: To understand the way Document Databases function, and how to interact with them.
